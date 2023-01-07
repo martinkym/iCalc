@@ -13,6 +13,13 @@ function App() {
   const [isComma, setIsComma] = useState(false)
   const [isMinus, setIsMinus] = useState(false)
 
+  useEffect(() => {
+    const arr = [...result]
+    if (!arr.find((val) => val === '.')) {
+      setIsComma(false)
+    }
+  }, [result])
+
   const onNumber = (isNumber, value) => {
     if (!isNumber) return
     if (result.length >= 10) return
