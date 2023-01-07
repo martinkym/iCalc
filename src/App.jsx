@@ -62,24 +62,24 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    setResult((prev) => {
-      if (isMinus) return `-${prev}`
-
+  const toggleMinus = () => {
+    if (isMinus) setResult(`-${result}`)
+    else {
       let res = ''
       let arr = [...result]
-      arr.shift()
 
-      if (arr.length === 0) {
-        return setResult('0')
-      }
+      if (arr.length > 1) arr.shift()
 
       for (let x of arr) {
         res += x
       }
 
       setResult(res)
-    })
+    }
+  }
+
+  useEffect(() => {
+    toggleMinus()
   }, [isMinus])
 
   const onOption = (isOption, value) => {
