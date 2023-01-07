@@ -4,7 +4,7 @@
 
 @layer components {
   .frame {
-    @apply mx-auto mt-14 grid h-fit w-[17.75rem] grid-cols-4 gap-3 rounded-2xl bg-black p-3 pb-4 font-semibold;
+    @apply mx-auto mt-14 grid h-fit w-[18rem] grid-cols-4 gap-3 rounded-2xl bg-black p-3 pb-4 font-semibold;
   }
 
   .screen {

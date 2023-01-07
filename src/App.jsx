@@ -14,7 +14,7 @@ function App() {
 
   const onNumber = (isNumber, value) => {
     if (!isNumber) return
-    if (result.length >= 9) return
+    if (result.length >= 10) return
 
     setResult((prev) => {
       if (prev === '0' && value === '0') return '0'
@@ -44,18 +44,18 @@ function App() {
         return
       }
 
-      setOperand(calculate(operand, result, operator))
-      setResult('0')
+      if (operand && result !== '0') {
+        setOperand(calculate(operand, result, operator).toPrecision(4))
+        setResult('0')
+        return
+      }
     } else {
       if (!operand) return
       setOperand('')
 
       const res = calculate(operand, result, operator)
-      if (string(res).length < 10) {
-        setResult(string(res))
-      } else {
-        setResult(res.toPrecision(2))
-      }
+      if (string(res).length >= 10) return setResult(res.toPrecision(3))
+      setResult(string(res))
     }
   }
 
@@ -82,6 +82,12 @@ function App() {
 
     if (value === ',') {
       if (isComma) return
+      if (operator === '=') {
+        setOperator('')
+        setIsComma(true)
+        setResult('0.')
+        return
+      }
       setResult((prev) => prev + '.')
       setIsComma(true)
     }
