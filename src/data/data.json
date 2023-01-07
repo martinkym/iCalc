@@ -1,0 +1,135 @@
+[
+  {
+    "_id": 1,
+    "value": "AC",
+    "isOption": true,
+    "isNumber": false,
+    "isOperator": false
+  },
+  {
+    "_id": 2,
+    "value": "+|-",
+    "isOption": true,
+    "isNumber": false,
+    "isOperator": false
+  },
+  {
+    "_id": 3,
+    "value": "%",
+    "isOption": true,
+    "isNumber": false,
+    "isOperator": false
+  },
+  {
+    "_id": 4,
+    "value": "/",
+    "isOption": false,
+    "isNumber": false,
+    "isOperator": true
+  },
+  {
+    "_id": 5,
+    "value": "7",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 6,
+    "value": "8",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 7,
+    "value": "9",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 8,
+    "value": "x",
+    "isOption": false,
+    "isNumber": false,
+    "isOperator": true
+  },
+  {
+    "_id": 9,
+    "value": "4",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 10,
+    "value": "5",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 12,
+    "value": "6",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 13,
+    "value": "-",
+    "isOption": false,
+    "isNumber": false,
+    "isOperator": true
+  },
+  {
+    "_id": 14,
+    "value": "1",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 15,
+    "value": "2",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 16,
+    "value": "3",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 17,
+    "value": "+",
+    "isOption": false,
+    "isNumber": false,
+    "isOperator": true
+  },
+  {
+    "_id": 18,
+    "value": "0",
+    "isOption": false,
+    "isNumber": true,
+    "isOperator": false
+  },
+  {
+    "_id": 19,
+    "value": ",",
+    "isOption": true,
+    "isNumber": false,
+    "isOperator": false
+  },
+  {
+    "_id": 20,
+    "value": "=",
+    "isOption": false,
+    "isNumber": false,
+    "isOperator": true
+  }
+]

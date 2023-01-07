@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .frame {
+    @apply mx-auto mt-14 grid h-fit w-[17.75rem] grid-cols-4 gap-3 rounded-2xl bg-black p-3 pb-4 font-semibold;
+  }
+
+  .screen {
+    @apply col-span-4 flex min-h-[5.5rem] flex-col items-end justify-center gap-2 rounded;
+  }
+
+  .result {
+    @apply min-h-[3rem] break-words break-all text-5xl;
+  }
+
+  .operand {
+    @apply min-h-[1.5rem] text-gray-600;
+  }
+
+  .button {
+    @apply flex h-14 w-14 items-center justify-center place-self-center rounded-full text-xl font-semibold;
+  }
+}
