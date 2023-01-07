@@ -50,8 +50,12 @@ function App() {
       if (!operand) return
       setOperand('')
 
-      const res = calculate(operand, result, operator).toPrecision(2)
-      setResult(res)
+      const res = calculate(operand, result, operator)
+      if (string(res).length < 10) {
+        setResult(string(res))
+      } else {
+        setResult(res.toPrecision(2))
+      }
     }
   }
 
