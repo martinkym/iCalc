@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CalcScreen } from './components/CalcScreen'
 import { Button } from './components/Button'
 import { Frame } from './components/Frame'
@@ -11,6 +11,7 @@ function App() {
   const [result, setResult] = useState('0')
   const [operator, setOperator] = useState('')
   const [isComma, setIsComma] = useState(false)
+  const [isMinus, setIsMinus] = useState(false)
 
   const onNumber = (isNumber, value) => {
     if (!isNumber) return
@@ -20,6 +21,7 @@ function App() {
       if (prev === '0' && value === '0') return '0'
 
       if (prev === '0') return value
+      if (prev === '-0') return `-${value}`
 
       if (operator === '=') {
         setOperator('')
@@ -34,6 +36,7 @@ function App() {
   const onOperator = (isOperator, value) => {
     if (!isOperator) return
 
+    setIsMinus(false)
     setIsComma(false)
     setOperator(value)
 
@@ -59,10 +62,31 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    setResult((prev) => {
+      if (isMinus) return `-${prev}`
+
+      let res = ''
+      let arr = [...result]
+      arr.shift()
+
+      if (arr.length === 0) {
+        return setResult('0')
+      }
+
+      for (let x of arr) {
+        res += x
+      }
+
+      setResult(res)
+    })
+  }, [isMinus])
+
   const onOption = (isOption, value) => {
     if (!isOption) return
 
     if (value === 'AC') {
+      setIsMinus(false)
       setIsComma(false)
       setOperator('')
       setOperand('')
@@ -71,9 +95,7 @@ function App() {
     }
 
     if (value === '+|-') {
-      setOperator('')
-      setResult((prev) => string(int(prev) * -1))
-      return
+      return setIsMinus(!isMinus)
     }
 
     if (value === '%') {
