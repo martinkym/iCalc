@@ -36,11 +36,12 @@ function App() {
   const onOperator = (isOperator, value) => {
     if (!isOperator) return
 
-    setIsMinus(false)
     setIsComma(false)
     setOperator(value)
 
     if (value !== '=') {
+      setIsMinus(false)
+
       if (!operand) {
         setOperand(result)
         setResult('0')
@@ -54,11 +55,16 @@ function App() {
       }
     } else {
       if (!operand) return
-      setOperand('')
 
       const res = calculate(operand, result, operator)
-      if (string(res).length >= 10) return setResult(res.toPrecision(3))
+      if (string(res).length >= 9) {
+        setResult(res.toPrecision(3))
+        setOperand('')
+        return
+      }
+
       setResult(string(res))
+      setOperand('')
     }
   }
 
