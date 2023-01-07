@@ -18,6 +18,10 @@ function App() {
     if (!arr.find((val) => val === '.')) {
       setIsComma(false)
     }
+
+    if (arr.find((val) => val === '-')) {
+      setIsMinus(true)
+    }
   }, [result])
 
   const onNumber = (isNumber, value) => {
